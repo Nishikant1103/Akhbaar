@@ -9,6 +9,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.flow
 
+private const val REFRESH_DELAY = 100000L
+
 class NewsProviderDataSource(
     private val newsApi: NewsApi = NewsApi(),
     private val newsFeedSource: List<String>
@@ -18,9 +20,8 @@ class NewsProviderDataSource(
             newsFeedSource.forEach {
                 val latestNews = newsApi.getNewsFromFeedUrl(it)
                 emit(latestNews)
-                delay(20000L)
+                delay(REFRESH_DELAY)
             }
         }
-
     }
 }

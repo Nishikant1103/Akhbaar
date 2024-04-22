@@ -14,15 +14,19 @@
         android:theme="@style/Theme.Akhbaar"
         tools:targetApi="31">
         <activity
-            android:name=".view.MainActivity"
+            android:name=".ui.view.MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.Akhbaar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.view.NewsDetailedViewActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Akhbaar">
         </activity>
     </application>
 

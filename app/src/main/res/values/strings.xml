@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Akhbaar</string>
+    <string name="app_name">Akhbaar Shorts</string>
+
+    <!-- News List View -->
+
+    <!-- News Detail View -->
+
+    <string name="news_detail_view_empty_description"> -- Empty Description -- </string>
+
 </resources>
