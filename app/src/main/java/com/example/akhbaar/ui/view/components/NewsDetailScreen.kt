@@ -28,7 +28,7 @@ import com.example.akhbaar.ui.theme.AkhbaarTheme
 import com.example.akhbaar.ui.theme.LocalAppDimensions
 
 @Composable
-fun NewsDetailedView(news: News) {
+fun NewsDetailScreen(news: News) {
     Card(
         Modifier
             .fillMaxSize()
@@ -114,6 +114,6 @@ fun NewsDetailedViewPreview() {
     )
 
     AkhbaarTheme {
-        NewsDetailedView(dummyNews)
+        NewsDetailScreen(dummyNews)
     }
 }

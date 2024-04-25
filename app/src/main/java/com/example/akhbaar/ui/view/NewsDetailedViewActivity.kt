@@ -11,7 +11,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.example.akhbaar.api.web.data.News
 import com.example.akhbaar.ui.theme.AkhbaarTheme
-import com.example.akhbaar.ui.view.components.NewsDetailedView
+import com.example.akhbaar.ui.view.components.NewsDetailScreen
 
 class NewsDetailedViewActivity : ComponentActivity() {
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
@@ -27,7 +27,7 @@ class NewsDetailedViewActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     if (news != null) {
-                        NewsDetailedView(news)
+                        NewsDetailScreen(news)
                     }
                 }
 

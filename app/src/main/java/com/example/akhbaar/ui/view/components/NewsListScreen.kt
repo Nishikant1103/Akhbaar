@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -26,7 +25,7 @@ import com.example.akhbaar.ui.theme.LocalAppDimensions
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun NewsListView(latestNewsSet: Set<News>?, onNewsItemClick: (news: News) -> Unit, paddingValues: PaddingValues) {
+fun NewsListScreen(latestNewsSet: Set<News>?, onNewsItemClick: (news: News) -> Unit, paddingValues: PaddingValues) {
     val scrollState = rememberLazyListState()
 
     LazyColumn(state = scrollState , modifier = Modifier.padding(paddingValues)) {
@@ -86,6 +85,6 @@ fun ReplyAppPreview() {
         News(newsTitle = "News 2", newsDescription = "News 2 description")
     )
     AkhbaarTheme {
-        NewsListView(dummyNews, onNewsItemClick = {}, PaddingValues(4.dp))
+        NewsListScreen(dummyNews, onNewsItemClick = {}, PaddingValues(4.dp))
     }
 }
