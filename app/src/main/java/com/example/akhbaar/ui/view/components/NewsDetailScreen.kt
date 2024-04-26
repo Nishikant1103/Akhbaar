@@ -6,6 +6,7 @@ import android.net.Uri
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -22,17 +23,18 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.akhbaar.R
 import com.example.akhbaar.api.web.data.News
 import com.example.akhbaar.ui.theme.AkhbaarTheme
 import com.example.akhbaar.ui.theme.LocalAppDimensions
 
 @Composable
-fun NewsDetailScreen(news: News) {
+fun NewsDetailScreen(news: News, paddingValues: PaddingValues) {
     Card(
         Modifier
             .fillMaxSize()
-            .padding(LocalAppDimensions.dimenLarge)
+            .padding(paddingValues)
     ) {
         val context = LocalContext.current
         Text(
@@ -114,6 +116,6 @@ fun NewsDetailedViewPreview() {
     )
 
     AkhbaarTheme {
-        NewsDetailScreen(dummyNews)
+        NewsDetailScreen(dummyNews, paddingValues = PaddingValues(4.dp))
     }
 }

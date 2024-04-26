@@ -1,39 +1,30 @@
 package com.example.akhbaar.ui.view
 
-import android.os.Build
 import android.os.Bundle
+import android.os.PersistableBundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.example.akhbaar.api.web.data.News
 import com.example.akhbaar.ui.theme.AkhbaarTheme
-import com.example.akhbaar.ui.view.components.NewsDetailScreen
-import com.example.akhbaar.ui.view.components.NewsDetailScreenScaffold
+import com.example.akhbaar.ui.view.components.FeedsScreenScaffold
 
-class NewsDetailedViewActivity : ComponentActivity() {
-    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
+class FeedsActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val news: News? = intent.getParcelableExtra(NEWS_ITEM_KEY, News::class.java)
-
         setContent {
             AkhbaarTheme {
+                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    if (news != null) {
-                        NewsDetailScreenScaffold(news)
-                    }
+                    FeedsScreenScaffold()
                 }
-
             }
         }
     }
 }
-

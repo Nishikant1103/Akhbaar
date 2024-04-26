@@ -7,22 +7,15 @@ import com.example.akhbaar.api.web.data.News
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreenScaffold(latestNewsSet: Set<News>?, onNewsItemClick: (news: News) -> Unit) {
-    Scaffold(
+fun NewsDetailScreenScaffold(news: News){
+    Scaffold (
         topBar = {
             TopAppBar()
         },
         bottomBar = {
             BottomNavBar()
         }
-
-    ) { innerPadding ->
-        NewsListScreen(
-            latestNewsSet = latestNewsSet,
-            onNewsItemClick = {
-                onNewsItemClick(it)
-            },
-            paddingValues = innerPadding
-        )
+    ){
+        NewsDetailScreen(news = news, paddingValues = it)
     }
 }
